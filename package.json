@@ -1,0 +1,32 @@
+{
+  "name": "adote-pets-cordova",
+  "version": "1.0.0",
+  "description": "MVP mobile academico Adote Pets com Apache Cordova, Framework7 e localStorage.",
+  "main": "www/index.html",
+  "scripts": {
+    "platform:browser": "cordova platform add browser",
+    "start": "cordova run browser",
+    "prepare:browser": "cordova prepare browser"
+  },
+  "keywords": [
+    "cordova",
+    "framework7",
+    "mobile",
+    "localstorage",
+    "adocao"
+  ],
+  "author": "Felipe Santiago (RA 078364) e Breno Ferreira (RA 069800)",
+  "license": "MIT",
+  "devDependencies": {
+    "cordova": "^12.0.0",
+    "cordova-browser": "^7.0.0"
+  },
+  "cordova": {
+    "platforms": [
+      "browser"
+    ]
+  },
+  "dependencies": {
+    "framework7": "^8.3.4"
+  }
+}

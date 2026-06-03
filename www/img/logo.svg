@@ -1,0 +1,7 @@
+<svg width="240" height="64" viewBox="0 0 240 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Adote Pets">
+  <rect width="240" height="64" rx="8" fill="white"/>
+  <path d="M31 43C21 43 14 36 14 27C14 18 21 11 31 11C41 11 48 18 48 27C48 36 41 43 31 43Z" fill="#E9F7F6"/>
+  <path d="M27 25C27 21 30 18 34 18C39 18 43 22 43 27C43 34 36 37 31 41C26 37 19 34 19 27C19 22 23 18 28 18C30 18 32 19 34 21" stroke="#006D83" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="62" y="38" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="800" fill="#006D83">Adote</text>
+  <text x="140" y="38" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="800" fill="#F47A20">Pets</text>
+</svg>

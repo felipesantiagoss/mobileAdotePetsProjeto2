@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: gap: https://images.unsplash.com https://plus.unsplash.com; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data: https://images.unsplash.com https://plus.unsplash.com; connect-src 'self';"
+    />
+    <title>Adote Pets | Historias</title>
+    <link rel="stylesheet" href="lib/framework7/framework7-bundle.min.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/historias.css" />
+  </head>
+  <body>
+    <div id="app" class="framework7-root">
+      <div class="view view-main">
+        <div class="page">
+          <div class="navbar app-navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="index.html" class="brand-link external" aria-label="Ir para inicio">
+                  <img src="img/logo.svg" alt="Adote Pets" />
+                </a>
+              </div>
+              <div class="title">Historias</div>
+              <div class="right">
+                <a href="acesso.html" class="small-nav-link external">Acesso</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="toolbar toolbar-bottom app-tabbar">
+            <div class="toolbar-inner">
+              <a href="index.html" class="nav-link external">
+                <span>Inicio</span>
+              </a>
+              <a href="pets.html" class="nav-link external">
+                <span>Pets</span>
+              </a>
+              <a href="favoritos.html" class="nav-link external">
+                <span>Favoritos</span>
+              </a>
+              <a href="historias.html" class="nav-link external active">
+                <span>Historias</span>
+              </a>
+              <a href="clinicas.html" class="nav-link external">
+                <span>Clinicas</span>
+              </a>
+              <a href="apis.html" class="nav-link external">
+                <span>APIs</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="page-content app-content">
+            <main class="app-shell">
+              <section id="area-lista-historias">
+                <div class="section-heading">
+                  <div>
+                    <span class="eyebrow">Impacto</span>
+                    <h2>Historias de impacto</h2>
+                    <p><span id="contador-historias">0</span> relatos de adocao responsavel para apresentar.</p>
+                  </div>
+                </div>
+
+                <div id="lista-historias" class="card-list"></div>
+              </section>
+
+              <section id="area-detalhe-historia" class="oculto">
+                <button id="voltar-historias" class="button button-outline app-button voltar-historias" type="button">Voltar</button>
+                <article id="conteudo-historia" class="detalhe-historia"></article>
+              </section>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="lib/framework7/framework7-bundle.min.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/manager.js"></script>
+    <script src="js/comum.js"></script>
+    <script src="js/historias.js"></script>
+  </body>
+</html>

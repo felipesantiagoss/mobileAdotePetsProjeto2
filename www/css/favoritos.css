@@ -1,0 +1,7 @@
+.favoritos-resumo {
+  background: linear-gradient(180deg, #f4fbfa 0%, #ffffff 100%);
+}
+
+.favoritos-resumo strong {
+  color: var(--color-primary-dark);
+}

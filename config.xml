@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="br.edu.unieuro.adotepets" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Adote Pets</name>
+    <description>
+        MVP academico mobile para adocao responsavel de pets, feito com Apache Cordova, Framework7, HTML, CSS, JavaScript ES6 e localStorage.
+    </description>
+    <author email="felipe078364@unieuro.edu.br" href="https://www.unieuro.edu.br">
+        Felipe Santiago (RA 078364) e Breno Ferreira (RA 069800)
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="BackupWebStorage" value="local" />
+</widget>

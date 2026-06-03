@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: gap: https://images.unsplash.com https://plus.unsplash.com; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data: https://images.unsplash.com https://plus.unsplash.com https://images.dog.ceo; connect-src 'self' https://dog.ceo https://apidadosabertos.saude.gov.br https://cors.eu.org https://nominatim.openstreetmap.org;"
+    />
+    <title>Adote Pets | Dados Abertos</title>
+    <link rel="stylesheet" href="lib/framework7/framework7-bundle.min.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/apis.css" />
+  </head>
+  <body>
+    <div id="app" class="framework7-root">
+      <div class="view view-main">
+        <div class="page">
+          <div class="navbar app-navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="index.html" class="brand-link external" aria-label="Ir para inicio">
+                  <img src="img/logo.svg" alt="Adote Pets" />
+                </a>
+              </div>
+              <div class="title">Dados Abertos</div>
+              <div class="right">
+                <a href="acesso.html" class="small-nav-link external">Acesso</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="toolbar toolbar-bottom app-tabbar">
+            <div class="toolbar-inner">
+              <a href="index.html" class="nav-link external">
+                <span>Inicio</span>
+              </a>
+              <a href="pets.html" class="nav-link external">
+                <span>Pets</span>
+              </a>
+              <a href="favoritos.html" class="nav-link external">
+                <span>Favoritos</span>
+              </a>
+              <a href="historias.html" class="nav-link external">
+                <span>Historias</span>
+              </a>
+              <a href="clinicas.html" class="nav-link external">
+                <span>Clinicas</span>
+              </a>
+              <a href="apis.html" class="nav-link external active">
+                <span>APIs</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="page-content app-content">
+            <main class="app-shell">
+              <section class="api-intro">
+                <span class="eyebrow">Fontes externas</span>
+                <h1>Dados abertos para qualificar o cuidado com pets.</h1>
+                <p>O app consulta fontes publicas para complementar a base local com referencias oficiais e conteudo visual real sobre animais.</p>
+                <div class="api-actions">
+                  <button id="atualizar-apis" class="button button-fill app-button primary-action" type="button">Consultar fontes</button>
+                </div>
+              </section>
+
+              <div id="loading-apis" class="api-loading oculto" aria-live="polite">
+                <span class="preloader"></span>
+                <span>Consultando fontes publicas...</span>
+              </div>
+
+              <section class="api-section">
+                <span class="eyebrow">Saude publica do tutor</span>
+                <h2>Vacinacao registrada no PNI 2023</h2>
+                <p>Consulta doses de vacinas aplicadas e registradas pelo Programa Nacional de Imunizacoes (Ministerio da Saude, 2023). Lembra os tutores de que manter as proprias vacinas em dia tambem faz parte de cuidar bem dos pets e de quem convive com eles.</p>
+                <div id="resultado-antirrabica"></div>
+              </section>
+
+              <section class="api-section">
+                <span class="eyebrow">Conheca antes de adotar</span>
+                <h2>Galeria de racas para futuros tutores</h2>
+                <p>Apresenta fotos reais de caes de diferentes racas para ajudar quem esta considerando uma adocao a se familiarizar com portes, pelagens e perfis antes da visita ao abrigo parceiro.</p>
+                <div id="resultado-dog-ceo"></div>
+              </section>
+
+              <section class="api-section">
+                <span class="eyebrow">Recurso nativo</span>
+                <h2>Minha localizacao</h2>
+                <p>Usa o GPS do aparelho (via navigator.geolocation) para mostrar onde voce esta. Util para encontrar abrigos e clinicas parceiras por perto. A ultima posicao fica salva e reaparece ao abrir o app.</p>
+                <div id="resultado-gps" class="api-data-card">
+                  <p>Clique no botao para capturar a posicao.</p>
+                </div>
+                <div class="api-actions">
+                  <button id="capturar-gps" class="button button-fill app-button primary-action" type="button">Capturar GPS</button>
+                </div>
+              </section>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="lib/framework7/framework7-bundle.min.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/manager.js"></script>
+    <script src="js/comum.js"></script>
+    <script src="js/api-config.js"></script>
+    <script src="js/cache.js"></script>
+    <script src="js/api-service.js"></script>
+    <script src="js/apis.js"></script>
+  </body>
+</html>

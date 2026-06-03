@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: gap: https://images.unsplash.com https://plus.unsplash.com; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data: https://images.unsplash.com https://plus.unsplash.com; connect-src 'self';"
+    />
+    <title>Adote Pets | Clinicas</title>
+    <link rel="stylesheet" href="lib/framework7/framework7-bundle.min.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/clinicas.css" />
+  </head>
+  <body>
+    <div id="app" class="framework7-root">
+      <div class="view view-main">
+        <div class="page">
+          <div class="navbar app-navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="index.html" class="brand-link external" aria-label="Ir para inicio">
+                  <img src="img/logo.svg" alt="Adote Pets" />
+                </a>
+              </div>
+              <div class="title">Clinicas</div>
+              <div class="right">
+                <a href="acesso.html" class="small-nav-link external">Acesso</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="toolbar toolbar-bottom app-tabbar">
+            <div class="toolbar-inner">
+              <a href="index.html" class="nav-link external">
+                <span>Inicio</span>
+              </a>
+              <a href="pets.html" class="nav-link external">
+                <span>Pets</span>
+              </a>
+              <a href="favoritos.html" class="nav-link external">
+                <span>Favoritos</span>
+              </a>
+              <a href="historias.html" class="nav-link external">
+                <span>Historias</span>
+              </a>
+              <a href="clinicas.html" class="nav-link external active">
+                <span>Clinicas</span>
+              </a>
+              <a href="apis.html" class="nav-link external">
+                <span>APIs</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="page-content app-content">
+            <main class="app-shell">
+              <section class="section-heading">
+                <div>
+                  <span class="eyebrow">Castracao</span>
+                  <h2>Clinicas parceiras</h2>
+                  <p>Contatos locais para cuidado preventivo.</p>
+                </div>
+                <button id="abrir-formulario-clinica" class="button button-outline app-button" type="button">Cadastrar</button>
+              </section>
+
+              <section class="resumo-pagina clinicas-resumo">
+                <strong id="contador-clinicas">0</strong>
+                <p>Clinicas registradas para demonstrar a area de parceiros de saude animal.</p>
+              </section>
+
+              <div id="lista-clinicas" class="card-list"></div>
+            </main>
+          </div>
+        </div>
+      </div>
+
+      <div class="popup" id="popup-clinica">
+        <div class="page popup-page">
+          <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="title">Cadastrar clinica</div>
+              <div class="right">
+                <a href="#" class="link popup-close">Fechar</a>
+              </div>
+            </div>
+          </div>
+          <div class="page-content popup-content">
+            <form id="formulario-clinica" class="stack-form">
+              <label>
+                Nome
+                <input name="nome" type="text" placeholder="Nome da clinica" required />
+              </label>
+              <label>
+                Local
+                <input name="local" type="text" placeholder="Bairro ou cidade" required />
+              </label>
+              <label>
+                Contato
+                <input name="contato" type="text" placeholder="Telefone ou WhatsApp" required />
+              </label>
+              <label>
+                Imagem URL
+                <input name="imagem" type="url" placeholder="Opcional" />
+              </label>
+              <button class="button button-fill app-button primary-action" type="submit">Salvar clinica</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="lib/framework7/framework7-bundle.min.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/manager.js"></script>
+    <script src="js/comum.js"></script>
+    <script src="js/clinicas.js"></script>
+  </body>
+</html>

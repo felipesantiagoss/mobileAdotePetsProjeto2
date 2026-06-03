@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: gap: https://images.unsplash.com https://plus.unsplash.com; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data: https://images.unsplash.com https://plus.unsplash.com; connect-src 'self';"
+    />
+    <title>Adote Pets | Inicio</title>
+    <link rel="stylesheet" href="lib/framework7/framework7-bundle.min.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/inicio.css" />
+  </head>
+  <body>
+    <div id="app" class="framework7-root">
+      <div class="view view-main">
+        <div class="page">
+          <div class="navbar app-navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="index.html" class="brand-link external" aria-label="Ir para inicio">
+                  <img src="img/logo.svg" alt="Adote Pets" />
+                </a>
+              </div>
+              <div class="title">Inicio</div>
+              <div class="right">
+                <a href="acesso.html" class="small-nav-link external">Acesso</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="toolbar toolbar-bottom app-tabbar">
+            <div class="toolbar-inner">
+              <a href="index.html" class="nav-link external active">
+                <span>Inicio</span>
+              </a>
+              <a href="pets.html" class="nav-link external">
+                <span>Pets</span>
+              </a>
+              <a href="favoritos.html" class="nav-link external">
+                <span>Favoritos</span>
+              </a>
+              <a href="historias.html" class="nav-link external">
+                <span>Historias</span>
+              </a>
+              <a href="clinicas.html" class="nav-link external">
+                <span>Clinicas</span>
+              </a>
+              <a href="apis.html" class="nav-link external">
+                <span>APIs</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="page-content app-content">
+            <main class="app-shell">
+              <section class="hero">
+                <img
+                  class="hero-image"
+                  src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=900&q=80"
+                  alt="Pessoa cuidando de cachorro"
+                />
+                <div class="hero-copy">
+                  <span class="eyebrow">Onde o cuidado encontra o lar</span>
+                  <h1>Adote com responsabilidade e acompanhe pets que precisam de uma familia.</h1>
+                  <p>Um espaco simples para conectar tutores, instituicoes parceiras e animais disponiveis para adocao.</p>
+                  <a href="pets.html" class="button button-fill app-button primary-action external">Quero adotar</a>
+                </div>
+              </section>
+
+              <section class="quick-actions">
+                <a href="pets.html" class="quick-action external">Ver pets</a>
+                <a href="historias.html" class="quick-action external">Historias</a>
+                <a href="clinicas.html" class="quick-action external">Castracao</a>
+                <a href="apis.html" class="quick-action external">APIs publicas</a>
+                <a href="acesso.html" class="quick-action external">Sou parceiro</a>
+              </section>
+
+              <section class="info-band">
+                <h2>Conheca o Adote Pets</h2>
+                <p>Agora o projeto esta separado por paginas reais para facilitar a explicacao de cada area do aplicativo.</p>
+                <div class="mini-stats">
+                  <div>
+                    <strong id="contador-home-pets">0</strong>
+                    <span>pets</span>
+                  </div>
+                  <div>
+                    <strong id="contador-home-historias">0</strong>
+                    <span>historias</span>
+                  </div>
+                  <div>
+                    <strong id="contador-home-clinicas">0</strong>
+                    <span>clinicas</span>
+                  </div>
+                </div>
+              </section>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="lib/framework7/framework7-bundle.min.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/manager.js"></script>
+    <script src="js/comum.js"></script>
+    <script src="js/inicio.js"></script>
+  </body>
+</html>

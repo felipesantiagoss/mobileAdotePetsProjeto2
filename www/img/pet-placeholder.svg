@@ -1,0 +1,10 @@
+<svg width="900" height="600" viewBox="0 0 900 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Imagem de pet">
+  <rect width="900" height="600" fill="#E9F7F6"/>
+  <circle cx="450" cy="300" r="156" fill="#FFFFFF"/>
+  <circle cx="370" cy="230" r="42" fill="#006D83"/>
+  <circle cx="530" cy="230" r="42" fill="#006D83"/>
+  <circle cx="322" cy="330" r="46" fill="#006D83"/>
+  <circle cx="578" cy="330" r="46" fill="#006D83"/>
+  <path d="M340 392C356 326 396 285 450 285C504 285 544 326 560 392C568 426 540 456 504 444C482 437 467 427 450 427C433 427 418 437 396 444C360 456 332 426 340 392Z" fill="#F47A20"/>
+  <text x="450" y="530" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="800" fill="#034B5B">Adote Pets</text>
+</svg>

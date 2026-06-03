@@ -1,0 +1,44 @@
+.story-card,
+.detalhe-historia {
+  background: #ffffff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(15, 55, 64, 0.08);
+  overflow: hidden;
+}
+
+.story-card img,
+.detalhe-historia img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+}
+
+.story-body,
+.story-detail-body {
+  padding: 14px;
+}
+
+.story-meta {
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.story-title {
+  color: var(--color-primary-dark);
+  font-size: 1.12rem;
+  font-weight: 900;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.story-detail-body p {
+  color: var(--color-ink);
+}
+
+.voltar-historias {
+  margin-bottom: 12px;
+  width: 120px;
+}

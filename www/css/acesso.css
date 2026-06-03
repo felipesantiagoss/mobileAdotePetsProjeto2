@@ -1,0 +1,17 @@
+.login-hero,
+.institution-area {
+  background: #ffffff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(15, 55, 64, 0.08);
+  margin-bottom: 16px;
+  padding: 18px;
+}
+
+.login-hero {
+  background: linear-gradient(180deg, #dff4f3 0%, #ffffff 100%);
+}
+
+.institution-area {
+  border-color: #ffd2b7;
+}

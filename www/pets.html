@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: gap: https://images.unsplash.com https://plus.unsplash.com; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data: https://images.unsplash.com https://plus.unsplash.com; connect-src 'self';"
+    />
+    <title>Adote Pets | Pets</title>
+    <link rel="stylesheet" href="lib/framework7/framework7-bundle.min.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/pets.css" />
+  </head>
+  <body>
+    <div id="app" class="framework7-root">
+      <div class="view view-main">
+        <div class="page">
+          <div class="navbar app-navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="index.html" class="brand-link external" aria-label="Ir para inicio">
+                  <img src="img/logo.svg" alt="Adote Pets" />
+                </a>
+              </div>
+              <div class="title">Pets</div>
+              <div class="right">
+                <a href="acesso.html" class="small-nav-link external">Acesso</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="toolbar toolbar-bottom app-tabbar">
+            <div class="toolbar-inner">
+              <a href="index.html" class="nav-link external">
+                <span>Inicio</span>
+              </a>
+              <a href="pets.html" class="nav-link external active">
+                <span>Pets</span>
+              </a>
+              <a href="favoritos.html" class="nav-link external">
+                <span>Favoritos</span>
+              </a>
+              <a href="historias.html" class="nav-link external">
+                <span>Historias</span>
+              </a>
+              <a href="clinicas.html" class="nav-link external">
+                <span>Clinicas</span>
+              </a>
+              <a href="apis.html" class="nav-link external">
+                <span>APIs</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="page-content app-content">
+            <main class="app-shell">
+              <section class="section-heading">
+                <div>
+                  <span class="eyebrow">Adocao</span>
+                  <h2>Pets disponiveis</h2>
+                  <p id="texto-contador-pets">0 pets encontrados</p>
+                </div>
+                <button id="abrir-filtros" class="button button-outline app-button" type="button">Filtrar</button>
+              </section>
+
+              <div id="resumo-filtros" class="filter-summary">Sem filtros aplicados</div>
+              <div id="lista-pets" class="card-list"></div>
+
+              <div class="fab fab-right-bottom app-fab">
+                <a href="#cadastro-pet" id="abrir-cadastro-pet" aria-label="Cadastrar pet">
+                  <span>+</span>
+                </a>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+
+      <div class="sheet-modal filter-sheet" id="sheet-filtros">
+        <div class="toolbar">
+          <div class="toolbar-inner">
+            <div class="left">Filtros</div>
+            <div class="right">
+              <a href="#" class="link sheet-close">Fechar</a>
+            </div>
+          </div>
+        </div>
+        <div class="sheet-modal-inner">
+          <form id="formulario-filtros" class="sheet-form">
+            <label>
+              Especie
+              <select name="especie">
+                <option value="">Todas</option>
+                <option value="Cachorro">Cachorro</option>
+                <option value="Gato">Gato</option>
+              </select>
+            </label>
+            <label>
+              Sexo
+              <select name="sexo">
+                <option value="">Todos</option>
+                <option value="Macho">Macho</option>
+                <option value="Femea">Femea</option>
+              </select>
+            </label>
+            <label>
+              Porte
+              <select name="porte">
+                <option value="">Todos</option>
+                <option value="Pequeno">Pequeno</option>
+                <option value="Medio">Medio</option>
+                <option value="Grande">Grande</option>
+              </select>
+            </label>
+            <label>
+              Idade
+              <input name="idade" type="text" placeholder="Ex: filhote, 1 ano, adulto" />
+            </label>
+            <label>
+              Raca
+              <input name="raca" type="text" placeholder="Ex: SRD, vira-lata" />
+            </label>
+            <label>
+              Localizacao
+              <input name="localizacao" type="text" placeholder="Ex: Taguatinga" />
+            </label>
+            <div class="sheet-actions">
+              <button id="limpar-filtros" class="button button-outline app-button" type="button">Limpar</button>
+              <button class="button button-fill app-button primary-action" type="submit">Aplicar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="popup" id="popup-detalhe-pet">
+        <div class="page popup-page">
+          <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="title">Detalhe do pet</div>
+              <div class="right">
+                <a href="#" class="link popup-close">Fechar</a>
+              </div>
+            </div>
+          </div>
+          <div class="page-content popup-content" id="conteudo-detalhe-pet"></div>
+        </div>
+      </div>
+
+      <div class="popup" id="popup-formulario-pet">
+        <div class="page popup-page">
+          <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="title" id="titulo-formulario-pet">Cadastrar animal</div>
+              <div class="right">
+                <a href="#" class="link popup-close">Fechar</a>
+              </div>
+            </div>
+          </div>
+          <div class="page-content popup-content">
+            <form id="formulario-pet" class="stack-form">
+              <input type="hidden" name="id" />
+              <label>
+                Nome
+                <input name="nome" type="text" placeholder="Nome do animal" required />
+              </label>
+              <label>
+                Especie
+                <select name="especie" required>
+                  <option value="">Selecione</option>
+                  <option value="Cachorro">Cachorro</option>
+                  <option value="Gato">Gato</option>
+                </select>
+              </label>
+              <label>
+                Sexo
+                <select name="sexo" required>
+                  <option value="">Selecione</option>
+                  <option value="Macho">Macho</option>
+                  <option value="Femea">Femea</option>
+                </select>
+              </label>
+              <label>
+                Raca
+                <input name="raca" type="text" placeholder="SRD, vira-lata..." required />
+              </label>
+              <label>
+                Porte
+                <select name="porte" required>
+                  <option value="">Selecione</option>
+                  <option value="Pequeno">Pequeno</option>
+                  <option value="Medio">Medio</option>
+                  <option value="Grande">Grande</option>
+                </select>
+              </label>
+              <label>
+                Idade
+                <input name="idade" type="text" placeholder="Ex: 2 anos" required />
+              </label>
+              <label>
+                Peso
+                <input name="peso" type="text" placeholder="Ex: 8 kg" />
+              </label>
+              <label>
+                Localizacao
+                <input name="localizacao" type="text" placeholder="Cidade ou bairro" required />
+              </label>
+              <label>
+                Status
+                <select name="status" required>
+                  <option value="Disponivel">Disponivel</option>
+                  <option value="Em acompanhamento">Em acompanhamento</option>
+                  <option value="Adotado">Adotado</option>
+                </select>
+              </label>
+              <label>
+                Imagem URL
+                <input name="imagem" type="url" placeholder="Link da foto ou deixe em branco" />
+              </label>
+              <label>
+                Descricao curta
+                <textarea name="descricao" rows="4" placeholder="Conte um pouco sobre o pet"></textarea>
+              </label>
+              <div class="two-checks">
+                <label class="check-row">
+                  <input name="vacinado" type="checkbox" />
+                  <span>Vacinado</span>
+                </label>
+                <label class="check-row">
+                  <input name="castrado" type="checkbox" />
+                  <span>Castrado</span>
+                </label>
+              </div>
+              <button class="button button-fill app-button primary-action" type="submit">Salvar pet</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="lib/framework7/framework7-bundle.min.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/manager.js"></script>
+    <script src="js/comum.js"></script>
+    <script src="js/pets.js"></script>
+  </body>
+</html>

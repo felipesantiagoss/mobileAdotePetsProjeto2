@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: gap: https://images.unsplash.com https://plus.unsplash.com; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data: https://images.unsplash.com https://plus.unsplash.com; connect-src 'self';"
+    />
+    <title>Adote Pets | Acesso</title>
+    <link rel="stylesheet" href="lib/framework7/framework7-bundle.min.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/acesso.css" />
+  </head>
+  <body>
+    <div id="app" class="framework7-root">
+      <div class="view view-main">
+        <div class="page">
+          <div class="navbar app-navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="index.html" class="brand-link external" aria-label="Ir para inicio">
+                  <img src="img/logo.svg" alt="Adote Pets" />
+                </a>
+              </div>
+              <div class="title">Acesso</div>
+              <div class="right">
+                <a href="index.html" class="small-nav-link external">Inicio</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="toolbar toolbar-bottom app-tabbar">
+            <div class="toolbar-inner">
+              <a href="index.html" class="nav-link external">
+                <span>Inicio</span>
+              </a>
+              <a href="pets.html" class="nav-link external">
+                <span>Pets</span>
+              </a>
+              <a href="favoritos.html" class="nav-link external">
+                <span>Favoritos</span>
+              </a>
+              <a href="historias.html" class="nav-link external">
+                <span>Historias</span>
+              </a>
+              <a href="clinicas.html" class="nav-link external">
+                <span>Clinicas</span>
+              </a>
+              <a href="apis.html" class="nav-link external">
+                <span>APIs</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="page-content app-content">
+            <main class="app-shell">
+              <section class="login-hero">
+                <h2>Acesse sua conta</h2>
+                <p>Fluxo local para demonstracao. Nao existe autenticacao real neste prototipo.</p>
+              </section>
+
+              <form id="formulario-login" class="simple-panel">
+                <label>
+                  E-mail ou CPF
+                  <input name="login" type="text" placeholder="Digite seu e-mail ou CPF" required />
+                </label>
+                <label>
+                  Senha
+                  <input name="senha" type="password" placeholder="Digite sua senha" required />
+                </label>
+                <label class="check-row">
+                  <input name="lembrar" type="checkbox" />
+                  <span>Manter conectado</span>
+                </label>
+                <button class="button button-fill app-button primary-action" type="submit">Entrar</button>
+                <p id="status-login" class="form-message"></p>
+              </form>
+
+              <section class="simple-panel">
+                <h3>Crie sua conta</h3>
+                <button id="abrir-formulario-instituicao" class="button button-outline app-button wide-button" type="button">
+                  Criar conta instituicao
+                </button>
+                <button id="criar-tutor-falso" class="button button-outline app-button wide-button" type="button">
+                  Criar conta tutor
+                </button>
+              </section>
+
+              <section class="institution-area">
+                <span class="eyebrow">Area da instituicao</span>
+                <h3>Cadastre animais para adocao</h3>
+                <p>O cadastro de pets agora fica isolado na pagina de pets para facilitar a explicacao do CRUD.</p>
+                <a href="pets.html#cadastro-pet" class="button button-fill app-button primary-action external">
+                  Ir para cadastro de animal
+                </a>
+              </section>
+            </main>
+          </div>
+        </div>
+      </div>
+
+      <div class="popup" id="popup-instituicao">
+        <div class="page popup-page">
+          <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="title">Cadastro de instituicao</div>
+              <div class="right">
+                <a href="#" class="link popup-close">Fechar</a>
+              </div>
+            </div>
+          </div>
+          <div class="page-content popup-content">
+            <form id="formulario-instituicao" class="stack-form">
+              <label>
+                Nome da ONG
+                <input name="nome" type="text" placeholder="Nome da instituicao" required />
+              </label>
+              <label>
+                E-mail
+                <input name="email" type="email" placeholder="contato@email.com" required />
+              </label>
+              <label>
+                Telefone
+                <input name="telefone" type="tel" placeholder="(61) 99999-9999" required />
+              </label>
+              <label>
+                CNPJ
+                <input name="cnpj" type="text" placeholder="00.000.000/0000-00" required />
+              </label>
+              <label>
+                Cidade
+                <input name="cidade" type="text" placeholder="Brasilia" required />
+              </label>
+              <label>
+                Endereco
+                <input name="endereco" type="text" placeholder="Endereco da instituicao" required />
+              </label>
+              <label>
+                Senha
+                <input name="senha" type="password" placeholder="Crie uma senha" required />
+              </label>
+              <label>
+                Confirmar senha
+                <input name="confirmarSenha" type="password" placeholder="Repita a senha" required />
+              </label>
+              <label class="check-row">
+                <input name="aceite" type="checkbox" required />
+                <span>Concordo com o uso local dos dados neste prototipo.</span>
+              </label>
+              <button class="button button-fill app-button primary-action" type="submit">Cadastrar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="lib/framework7/framework7-bundle.min.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/manager.js"></script>
+    <script src="js/comum.js"></script>
+    <script src="js/acesso.js"></script>
+  </body>
+</html>
